@@ -1,0 +1,27 @@
+create table neighborhoods
+(
+    id              text,
+    "polygonNumber" int,
+    "pointNumber"   int,
+    name            text static,
+    point           list<double>,
+    type            text static,
+    primary key (id, "polygonNumber", "pointNumber")
+);
+
+create table restaurants
+(
+    id       text primary key,
+    location list<double>,
+    name     text,
+    type     text
+);
+
+create table restaurantsbyneighborhood
+(
+    id_neighborhood text,
+    "polygonNumber" int,
+    id_restaurant   text,
+    primary key (id_neighborhood, "polygonNumber", id_restaurant)
+);
+
