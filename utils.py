@@ -36,7 +36,7 @@ class Restaurante:
 
 def dumpPolygon(neighborhood, dumpFile):
     for i in range(len(neighborhood["geometry"]["coordinates"][0])):
-        dumpLine = "{0},0,{1},{2},{3},{4}\n".format(neighborhood["_id"]["$oid"],
+        dumpLine = "{0},0,{1},{2},{3},\"{4}\"\n".format(neighborhood["_id"]["$oid"],
                                                     i, neighborhood['name'],
                                                     neighborhood["geometry"]["type"],
                                                     neighborhood["geometry"]["coordinates"][0][i])
@@ -46,7 +46,7 @@ def dumpPolygon(neighborhood, dumpFile):
 def dumpMultiPolygon(neighborhood, dumpFile):
     for i in range(len(neighborhood["geometry"]["coordinates"])):
         for j in range(len(neighborhood["geometry"]["coordinates"][i][0])):
-            dumpLine = "{0},{1},{2},{3},{4},{5}\n".format(neighborhood["_id"]["$oid"],
+            dumpLine = "{0},{1},{2},{3},{4},\"{5}\"\n".format(neighborhood["_id"]["$oid"],
                                                           i, j, neighborhood['name'],
                                                           neighborhood["geometry"]["type"],
                                                           neighborhood["geometry"]["coordinates"][i][0][j])

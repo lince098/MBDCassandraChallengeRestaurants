@@ -1,0 +1,3 @@
+copy restaurantsbyneighborhood (id_neighborhood,"polygonNumber",id_restaurant) from '/var/lib/cassandra/challenge/RestaurantesPorVecindario.csv' with HEADER=TRUE;
+copy neighborhoods (id, "polygonNumber","pointNumber",name,type,point) from '/var/lib/cassandra/challenge/neighborhoods.csv' with HEADER=TRUE;
+copy restaurants (id,location,name,type) from '/var/lib/cassandra/challenge/restaurants.csv' with HEADER=TRUE;
