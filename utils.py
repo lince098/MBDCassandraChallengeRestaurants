@@ -7,8 +7,8 @@ class Vecindario:
 
     def __init__(self, id, tipo, puntos):
         """
-        @param puntos puede ser un poligono obj["geometry"]["coordinates"]               [0][indice de puntos]
-        @param puntos puede ser un array de poligonos obj["geometry"]["coordinates"]     [index poligono][0][indicepunto]]
+        @param puntos puede ser un poligono obj["geometry"]["coordinates"][0][indice de puntos]
+        @param puntos puede ser un array de poligonos obj["geometry"]["coordinates"][index poligono][0][indicepunto]]
         """
         self.id = id
         self.polygons = []
@@ -35,6 +35,11 @@ class Restaurante:
         self.location = location
         self.location.reverse()
 
+#####
+
+# Las funciones dump escriben las lineas de cada csv.
+
+#####
 
 def dumpPolygon(neighborhood, dumpFile):
     for i in range(len(neighborhood["geometry"]["coordinates"][0])):
